@@ -1,6 +1,6 @@
 const inquirer = require('inquirer')
 const mysql = require('mysql2')
-
+require("dotenv").config()
 let question = [{
     "type": "list",
     "name":"userchoice",
@@ -13,7 +13,7 @@ const db = mysql.createConnection(
     // MySQL username,
     user: 'root',
     // MySQL password
-    password: 'Fatima1997$',
+    password: process.env.PASSWORD,
     database: 'employeemanager'
   },
   console.log(`Connected to the classlist_db database.`)
